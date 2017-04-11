@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro');
+
+/*font-family: 'Montserrat', sans-serif;*/
+/*font-family: 'Source Sans Pro', sans-serif;*/
+
+:root {
+    --main-color: #78af28;
+    --light-color: #e4efd4;
+}
+
+header {
+    background-color: var(--main-color);
+    height: 220px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+header > img {
+    display: block;
+    margin: auto;
+    top: 82px;
+    position: relative;
+}
+
+footer {
+    background-color: var(--main-color);
+    height: 100px;
+}
+
+.teachers {
+    background-color: var(--light-color);
+}
+
+.teachers h2 {
+    text-align: center;
+}
+
+nav.navbar {
+    background-color: var(--main-color);
+    border: 0;
+    border-radius: initial;
+}
+
+ul.nav.navbar-nav {
+    float: none;
+    text-align: center;
+}
+
+ul.nav.navbar-nav > li {
+    float: none;
+    display:inline;
+}
+
+ul.nav.navbar-nav > li > a {
+    display:inline-block;
+    height: 25px;
+    width: 112px;
+}
