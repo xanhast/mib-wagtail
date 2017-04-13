@@ -17,16 +17,14 @@
                         <h3>{{ teacher.name }}</h3>
                         <h4>Upcoming Courses</h4>
                         <table class="table table-courses">
-                            <tr>
-                                <td>MBSR</td>
-                                <td>12th June</td>
-                                <td>Colston Yard</td>
-                            </tr>
-                            <tr>
-                                <td>MBSR</td>
-                                <td>12th June</td>
-                                <td>Colston Yard</td>
-                            </tr>
+                            {% for course in teacher.courses.all %}
+                                <tr>
+                                    <td>{{ course.name }}</td>
+                                    <td>{{ course.time }}</td>
+                                    <td>{{ course.date }}</td>
+                                    <td>{{ course.location }}</td>
+                                </tr>    
+                            {% endfor %}
                         </table>
                         <div class="contact">
                             <table>

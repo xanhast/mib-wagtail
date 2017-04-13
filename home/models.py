@@ -8,9 +8,14 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailsnippets.models import register_snippet
+from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
+from wagtail.wagtailadmin.edit_handlers import InlinePanel
+
+from modelcluster.models import ClusterableModel
+from modelcluster.fields import ParentalKey
 
 @register_snippet
-class Teacher(models.Model):
+class Teacher(ClusterableModel):
     name = models.CharField(max_length=250)
     email = models.CharField(max_length=250)
     phone = models.CharField(max_length=250)
@@ -31,9 +36,28 @@ class Teacher(models.Model):
       FieldPanel('website'),
       FieldPanel('bio', classname="full"),
       ImageChooserPanel('photo'),
+      InlinePanel('courses', label="Courses"),
     ]
     def __str__(self):              # __unicode__ on Python 2
         return self.name
+
+
+@register_snippet
+class course(models.Model):
+    teacher = ParentalKey('Teacher', related_name='courses')
+    name = models.CharField(max_length=250)
+    location = models.CharField(max_length=250)
+    date = models.DateField()
+    time = models.TimeField(null=True, blank=True)
+    
+    content_panels = Page.content_panels + [
+        FieldPanel('name'),
+        FieldPanel('location'),
+        FieldPanel('date'),
+        SnippetChooserPanel('teacher'),
+    ]
+    def __str__(self):              # __unicode__ on Python 2
+        return "{} by {} - {} - {} {}".format(self.name,self.teacher,self.location,self.time,self.date)
 
 class HomePage(Page):
     body = RichTextField(blank=True)
@@ -58,3 +82,4 @@ class StandardPage(Page):
         FieldPanel('link_name'),
         FieldPanel('body', classname="full"),
     ]
+    
