@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Source+Sans+Pro:700');
 
 /*font-family: 'Montserrat', sans-serif;*/
 /*font-family: 'Source Sans Pro', sans-serif;*/
@@ -6,6 +6,8 @@
 :root {
     --main-color: #78af28;
     --light-color: #e4efd4;
+    --off-color: #d0e3b4;
+    --darker-color: #508c05;
 }
 
 header {
@@ -26,14 +28,126 @@ header > img {
 footer {
     background-color: var(--main-color);
     height: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    color: white;
+    padding:25px;
 }
 
 .teachers {
     background-color: var(--light-color);
+    padding-bottom: 40px;
 }
 
 .teachers h2 {
     text-align: center;
+    color: var(--darker-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.teachers h3 {
+    color: var(--darker-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.teachers h4 {
+    color: gray;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.teachers .teacher {
+    background-color: var(--off-color);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.teachers .teacher .photo-wrap {
+    text-align: center;   
+}
+
+.teachers .teacher img {
+    display: inline-block;
+    margin: 20px;
+    margin-top: 40px;
+    outline: 20px solid white;
+}
+
+.teachers .contact {
+    color: var(--darker-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.teachers .contact span {
+    color: gray;
+}
+
+.teachers .contact table {
+    width:100%;
+}
+
+.teachers .bio-text {
+    text-align: center;
+}
+
+.teachers .bio-text .rich-text {
+    text-align: left;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.teachers .readmore-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    
+    background-color: var(--light-color);
+    padding: 4px 20px 2px 20px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.table-courses {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--darker-color);
+    border: 2px solid white;
+    background-color: white;
+}
+
+
+
+.table-courses tr:nth-child(2){
+    background-color: var(--light-color);
+}
+
+table.table.table-courses td {
+    border: 0;
+}
+
+.sideimage {
+    display: block;
+    margin: auto;
+
+}
+
+h1 {
+    color: var(--darker-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
 }
 
 nav.navbar {
@@ -53,7 +167,26 @@ ul.nav.navbar-nav > li {
 }
 
 ul.nav.navbar-nav > li > a {
+    border: 1px solid white;
     display:inline-block;
-    height: 25px;
     width: 112px;
+    margin: 20px 10px;
+    background-color: white;
+    color: var(--main-color);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+ul.nav.navbar-nav > li > a:hover {
+    background-color: var(--light-color) !important;
+    color: var(--main-color) !important;
+}
+
+ul.nav.navbar-nav > li.active > a {
+    color: white;
+    background-color: var(--main-color);
+    
 }

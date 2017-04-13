@@ -1,4 +1,4 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar bristolmindfulness_tags %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -41,34 +41,17 @@
         <header>
             <img src="{% static 'images/mib-logo.svg' %}" />
         </header>
-        <nav class="navbar">
-          <div class="container">
-            <div id="navbar">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
-        <div class="container main">
-            {% block content %}{% endblock %}
-        </div>
         
-        <div class="teachers">
-            <div class="container">
-                <div class="col-md-12">
-                    <h2>Our Teachers</h2>
-                </div>
-            </div>
-        </div>
+        {% nav calling_page=self %}
+        
+        {% block content %}{% endblock %}
+
         
         <footer>
             <div class="container">
                 <div class="col-md-12">
-                    Copyright
+                    <img src="{% static 'images/mib-logo.svg' %}" height="25" /><br/><br/>
+                    &nbsp;Copyright &copy; Bristol Mindfulness.  All rights reserved.
                 </div>
             </div>
         </footer>
@@ -76,9 +59,14 @@
 
         {# Global javascript #}
         <!-- Latest compiled and minified JavaScript -->
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        
+        <script type="text/javascript" src="{% static 'js/readmore.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/bristolmindfulness.js' %}"></script>
+        
 
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}

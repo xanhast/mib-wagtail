@@ -7,17 +7,7 @@
 {% block content %}
     <div class="container main">
         <div class="col-md-12">
-            <h1>{{ page.title }}</h1>
-        </div>
-        
-        <div class="col-md-7">
             {{ page.body|richtext }}
         </div>
-        
-        <div class="col-md-5">
-            {% image page.photo max-370x246 class="sideimage" %}
-        </div>
     </div>
-        
-    {% teachers %}
 {% endblock %}

@@ -1,0 +1,53 @@
+{% load wagtailcore_tags wagtailimages_tags bristolmindfulness_tags %}
+
+<div class="teachers">
+    <div class="container">
+        <div class="col-md-12">
+            <h2>Our Teachers</h2>
+        </div>
+        {% for teacher in teachers %}
+            <div class="teacher">
+                <div class="container">
+                    <div class="col-md-2 photo-wrap">
+                    
+                        {% image teacher.photo fill-110x145 %}
+                        
+                    </div>
+                    <div class="col-md-10">
+                        <h3>{{ teacher.name }}</h3>
+                        <h4>Upcoming Courses</h4>
+                        <table class="table table-courses">
+                            <tr>
+                                <td>MBSR</td>
+                                <td>12th June</td>
+                                <td>Colston Yard</td>
+                            </tr>
+                            <tr>
+                                <td>MBSR</td>
+                                <td>12th June</td>
+                                <td>Colston Yard</td>
+                            </tr>
+                        </table>
+                        <div class="contact">
+                            <table>
+                                <tr>
+                                    <td><span>Tel: </span>{{ teacher.phone|obfuscate }}</td>
+                                    <td><span>Email: </span>{{ teacher.email|obfuscate }}</td>
+                                    <td><span>Web: </span>{{ teacher.website }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-12">
+                        <h4>Bio</h4>
+                        <div class="bio-text">
+                            {{ teacher.bio|richtext }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
