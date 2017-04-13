@@ -9,6 +9,9 @@ ALLOWED_HOSTS = ['127.0.0.1', 'bristolmindfulness.com', 'www.bristolmindfulness.
 env = os.environ.copy()
 SECRET_KEY = env['SECRET_KEY']
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/'
+
 DEBUG = False
 
 DATABASES = {
