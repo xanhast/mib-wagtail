@@ -12,9 +12,10 @@ SECRET_KEY = env['SECRET_KEY']
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
-MEDIA_URL = '/media/'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
+MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 DEBUG = False
 
