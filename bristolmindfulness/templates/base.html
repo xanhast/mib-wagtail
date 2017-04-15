@@ -38,8 +38,8 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        <header>
-            <img src="{% static 'images/mib-logo.svg' %}" />
+        <header style="background-image: url({% static 'images/header.png' %})">
+            
         </header>
         
         {% nav calling_page=self %}

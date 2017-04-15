@@ -4,16 +4,21 @@
 /*font-family: 'Source Sans Pro', sans-serif;*/
 
 :root {
-    --main-color: #78af28;
-    --light-color: #e4efd4;
-    --off-color: #d0e3b4;
-    --darker-color: #508c05;
+    --main-color: #0a6526;
+    --light-color: #d0e3b4;
+    --off-color: #8cca5c;
+    --darker-color: #044034;
+    --link-color: #1277bb;
+}
+
+a {
+    color: var(--link-color);
 }
 
 header {
     background-color: var(--main-color);
-    height: 220px;
-    background-size: cover;
+    height: 400px;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center; 
 }
@@ -56,7 +61,7 @@ footer {
 }
 
 .teachers h4 {
-    color: gray;
+    color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 500;
@@ -86,7 +91,7 @@ footer {
 }
 
 .teachers .contact span {
-    color: gray;
+    color: white;
 }
 
 .teachers .contact table {
