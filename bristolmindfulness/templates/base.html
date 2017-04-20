@@ -38,15 +38,18 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        <header style="background-image: url({% static 'images/header.png' %})">
-            
-        </header>
-        
-        {% nav calling_page=self %}
+        <div class="container">
+            <div class="col-md-12">
+                <header style="background-image: url({% static 'images/header.png' %})">
+                    
+                </header>
+                
+                {% nav calling_page=self %}
+            </div>
+        </div>
         
         {% block content %}{% endblock %}
 
-        
         <footer>
             <div class="container">
                 <div class="col-md-12">
