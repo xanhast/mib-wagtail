@@ -15,6 +15,16 @@ a {
     color: var(--link-color);
 }
 
+.rich-text img.richtext-image.left {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.rich-text img.richtext-image.right {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
 header {
     background-color: var(--main-color);
     height: 400px;
