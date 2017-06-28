@@ -10,7 +10,14 @@ env = os.environ.copy()
 SECRET_KEY = env['SECRET_KEY']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/'
+STATIC_URL = '/static/'
+
+COMPRESS_OFFLINE = True
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+]
+COMPRESS_CSS_HASHING_METHOD = 'content'
 
 AWS_STORAGE_BUCKET_NAME = env['AWS_STORAGE_BUCKET_NAME']
 AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
