@@ -32,10 +32,10 @@ DEBUG = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['VDT_DB_NAME'],
-        'USER': os.environ['VDT_DB_USER'],
-        'PASSWORD': os.environ['VDT_DB_PASS'],
-        'HOST': os.environ['VDT_DB_HOST'],
+        'NAME': os.environ['PGDATABASE'],
+        'USER': os.environ['PGUSER'],
+        'PASSWORD': os.environ['PGPASSWORD'],
+        'HOST': os.environ['PGHOST'],
         'PORT': '5432',
     }
 }
